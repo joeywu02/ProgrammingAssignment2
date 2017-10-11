@@ -1,7 +1,11 @@
-## Put comments here that give an overall description of what your
-## functions do
+## To avoid repeatedly calculate the inverse of a matrix, a time-consuming 
+## process, these functions use the cache process to speed up.
 
-## Write a short comment describing this function
+## makeCacheMatrix() creates an R object that stores a matrix, the inverse of 
+## the matrix, and four functions used in the cache process. "set" set the value 
+## of the matrix. "get" get the value of the matrix. "setinv" set the value of
+## the inverse of the matrix. "getinv" get the value of the inverse of the 
+## matrix. 
 
 makeCacheMatrix <- function(x = matrix()) {
         i <- NULL
@@ -17,7 +21,10 @@ makeCacheMatrix <- function(x = matrix()) {
              getinv = getinv)
 }
 
-## Write a short comment describing this function
+## CacheSolve() requires an matrix argument returned from makeCacheMatrix().
+## When the function is called for the first time, inverse of the matrix is 
+## calculated and cached. Subsequent calls of the function will return the
+## inverse from previously stored cache.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
